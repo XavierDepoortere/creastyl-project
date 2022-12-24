@@ -1,0 +1,20 @@
+.signInContent {
+  display: flex;
+  background: $color-5;
+  width: 86%;
+  height: 92vh;
+  position: relative;
+  overflow: hidden;
+  left: 14%;
+  top: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+.logContent {
+  position: relative;
+  border-radius: $borderRadius;
+  width: 50%;
+  height: 60%;
+  background: $white;
+  box-shadow: 0 3px 10px #333;
+}
