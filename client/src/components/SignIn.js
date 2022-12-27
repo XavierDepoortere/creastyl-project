@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import Navigation from "../components/Navigation";
-import { UidContext } from "../components/AppContext";
+import { UidContext } from "./AppContext";
 import axios from "axios";
 
 const SignIn = () => {
@@ -38,8 +37,6 @@ const SignIn = () => {
 
   return (
     <div className="signIn">
-      <Navigation />
-
       <div className="signInContent">
         {uid ? (
           <h1>UPDATE PAGE</h1>
@@ -55,12 +52,13 @@ const SignIn = () => {
                     type="text"
                     name="email"
                     id="email"
-                    placeholder=""
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                   />
                 </div>
-                <div className="email error"></div>
+                <div className="errorContent">
+                  <div className="email error"></div>
+                </div>
                 <br />
                 <label htmlFor="password">Mot de passe</label>
                 <br />
@@ -70,14 +68,15 @@ const SignIn = () => {
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="Type your username"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                   />
                 </div>
-                <div className="password error"></div>
+                <div className="errorContent">
+                  <div className="password error"></div>
+                </div>
                 <br />
-                <input type="submit" value="Connexion" />
+                <input type="submit" value="Connexion" className="btn" />
               </form>
             </div>
             <div className="imgContent">

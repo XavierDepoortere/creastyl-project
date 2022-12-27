@@ -1,11 +1,12 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+import SignIn from "../components/SignIn";
 
 const Test = () => {
   return (
     <div className="test">
-      <Navigation />
-      <div className="testContent">bienvenue sur Test</div>
+      <div className="testContent">
+        <SignIn />
+      </div>
     </div>
   );
 };

@@ -1,12 +1,10 @@
 .signInContent {
   display: flex;
   background: $color-5;
-  width: 86%;
-  height: 92vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  left: 14%;
-  top: 8vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -49,6 +47,15 @@
         outline: none;
       }
     }
+    .errorContent {
+      width: 100%;
+      height: 20px;
+
+      .error {
+        color: red;
+        font-size: 0.7rem;
+      }
+    }
   }
   .imgContent {
     width: 50%;
@@ -56,5 +63,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .btn {
+    font-size: 0.8rem;
+    width: 80px;
+    height: 30px;
+    background: #14ab67;
+    color: $white;
+    cursor: pointer;
+    border: none;
+    border-radius: $borderRadius;
+    font-family: $font-1;
   }
 }
