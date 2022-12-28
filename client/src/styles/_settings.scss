@@ -2,8 +2,8 @@
 
 $font-1: "Poppins", sans-serif;
 
-$color-1: rgb(0, 63, 126);
-$color-2: rgb(108, 119, 244);
+$color-1: rgb(0, 83, 127);
+$color-2: rgb(27, 76, 126);
 $color-3: rgb(99, 164, 233);
 $color-4: rgb(79, 237, 210);
 $color-5: rgb(239, 240, 241);
@@ -21,8 +21,9 @@ $borderRadius: 3px;
 
 .home,
 .test,
-.test2,
-.signIn {
+.setting {
   display: flex;
   font-family: $font-1;
+  width: 86%;
+  margin-left: 14%;
 }

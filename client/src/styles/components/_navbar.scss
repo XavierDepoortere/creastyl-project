@@ -6,23 +6,32 @@
   background: $color-1;
   margin-left: 14%;
   align-items: center;
+  font-family: $font-1;
+  padding: 5px 0px;
 }
 .user {
   display: flex;
   position: relative;
   align-items: center;
-
   margin-left: 100px;
 
   .userRound {
-    width: 5vh;
-    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-weight: bold;
+    font-size: 2.5vh;
+    width: 5.5vh;
+    height: 5.5vh;
     border-radius: 50%;
-    background: $white;
+    background: green;
     margin-right: 10px;
+    text-transform: uppercase;
   }
   .userName {
     color: $white;
+    text-transform: uppercase;
   }
 }
 .iconNav {
@@ -30,6 +39,11 @@
   position: relative;
   align-items: center;
   cursor: pointer;
+  margin-left: 10px;
+  height: 8vh;
+  margin: 5vh 0 5vh 0;
+  padding-left: 2vh;
+  padding-right: 2vh;
 
   .icon {
     width: 5vh;
@@ -40,5 +54,9 @@
   }
   .iconName {
     color: $white;
+    text-transform: capitalize;
   }
+}
+.iconNav:hover {
+  background: $color-2;
 }

@@ -11,6 +11,8 @@ const SignIn = () => {
     e.preventDefault();
     const emailError = document.querySelector(".email.error");
     const passwordError = document.querySelector(".password.error");
+    emailError.innerHTML = "";
+    passwordError.innerHTML = "";
 
     axios({
       method: "post",
@@ -43,11 +45,11 @@ const SignIn = () => {
         ) : (
           <div className="logContent">
             <div className="formContent">
-              <form action="" onSubmit={handleLogin} id="sign-up-form">
+              <form action="" onSubmit={handleLogin} id="sign-in-form">
                 <label htmlFor="email">Email</label>
                 <br />
-                <div class="email-input">
-                  <i class="fas fa-user"></i>
+                <div className="email-input">
+                  <i className="fas fa-user"></i>
                   <input
                     type="text"
                     name="email"
@@ -62,8 +64,8 @@ const SignIn = () => {
                 <br />
                 <label htmlFor="password">Mot de passe</label>
                 <br />
-                <div class="password-input">
-                  <i class="fas fa-lock"></i>
+                <div className="password-input">
+                  <i className="fas fa-lock"></i>
                   <input
                     type="password"
                     name="password"

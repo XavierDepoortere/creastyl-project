@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
-import Test2 from "./pages/Test2";
+import Setting from "./pages/Setting";
 
 import Navbar from "./components/Navbar";
 import { UidContext } from "./components/AppContext";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getUser } from "./actions/user.actions";
 
 const App = () => {
   const [uid, setUid] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -22,6 +25,7 @@ const App = () => {
         .catch((err) => console.log("No token"));
     };
     fetchToken();
+    if (uid) dispatch(getUser(uid));
   }, [uid]);
 
   return (
@@ -31,7 +35,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/test" exact element={<Test />} />
-          <Route path="/test2" exact element={<Test2 />} />
+          <Route path="/setting" exact element={<Setting />} />
         </Routes>
       </Router>
     </UidContext.Provider>
