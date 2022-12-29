@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Test from "./pages/Test";
+import Profil from "./pages/Profil";
 import Setting from "./pages/Setting";
-
+import Leftbar from "./components/Leftbar";
 import Navbar from "./components/Navbar";
 import { UidContext } from "./components/AppContext";
 import axios from "axios";
@@ -32,9 +32,10 @@ const App = () => {
     <UidContext.Provider value={uid}>
       <Router>
         <Navbar />
+        <Leftbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/test" exact element={<Test />} />
+          <Route path="/profil" exact element={<Profil />} />
           <Route path="/setting" exact element={<Setting />} />
         </Routes>
       </Router>

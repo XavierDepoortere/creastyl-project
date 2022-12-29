@@ -8,55 +8,60 @@
   align-items: center;
   font-family: $font-1;
   padding: 5px 0px;
-}
-.user {
-  display: flex;
-  position: relative;
-  align-items: center;
-  margin-left: 100px;
-
-  .userRound {
+  .iconNav {
     display: flex;
+    position: relative;
     align-items: center;
-    justify-content: center;
-    color: $white;
-    font-weight: bold;
-    font-size: 2.5vh;
-    width: 5.5vh;
-    height: 5.5vh;
-    border-radius: 50%;
-    background: green;
-    margin-right: 10px;
-    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 8vh;
+    margin: 5vh 0 5vh 0;
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+    .icon {
+      width: 5vh;
+      height: 5vh;
+      border-radius: 50%;
+
+      margin-right: 10px;
+    }
+    .iconName {
+      color: $white;
+      text-transform: capitalize;
+    }
   }
-  .userName {
-    color: $white;
-    text-transform: uppercase;
+  .iconNav:hover {
+    background: $color-2;
+  }
+
+  .user {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-left: 100px;
+
+    .userRound {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      font-weight: bold;
+      font-size: 2.5vh;
+      width: 5.5vh;
+      height: 5.5vh;
+      border-radius: 50%;
+      background: $color-4;
+      margin-right: 10px;
+      text-transform: uppercase;
+    }
+    .userName {
+      color: $white;
+      text-transform: uppercase;
+    }
   }
 }
-.iconNav {
-  display: flex;
-  position: relative;
-  align-items: center;
-  cursor: pointer;
-  margin-left: 10px;
-  height: 8vh;
-  margin: 5vh 0 5vh 0;
-  padding-left: 2vh;
-  padding-right: 2vh;
 
-  .icon {
-    width: 5vh;
-    height: 5vh;
-    border-radius: 50%;
-
-    margin-right: 10px;
-  }
-  .iconName {
-    color: $white;
-    text-transform: capitalize;
-  }
-}
-.iconNav:hover {
-  background: $color-2;
+#admin[aria-expanded="false"] {
+  display: none;
 }

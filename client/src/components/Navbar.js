@@ -9,6 +9,7 @@ const Navbar = () => {
   const userData = useSelector((state) => state.userReducer);
   const firstname = userData.firstName;
   const lastname = userData.lastName;
+  const navAdmin = userData.duty;
   const names = firstname + " " + lastname;
 
   return (
@@ -24,7 +25,13 @@ const Navbar = () => {
               <div className="iconName">accueil</div>
             </div>
           </NavLink>
-          <NavLink exact={true.toString()} to="/setting">
+
+          <NavLink
+            id="admin"
+            aria-expanded={navAdmin}
+            exact={true.toString()}
+            to="/setting"
+          >
             <div className="iconNav">
               <div className="icon">
                 <img src="./img/setting.svg" alt="services" />

@@ -11,7 +11,7 @@ const createToken = (id) => {
 };
 
 module.exports.signUp = async (req, res) => {
-  const { firstName, lastName, email, password, dateOfBirth } = req.body;
+  const { firstName, lastName, email, password, dateOfBirth, duty } = req.body;
 
   try {
     const user = await UserModel.create({
@@ -20,11 +20,13 @@ module.exports.signUp = async (req, res) => {
       email,
       password,
       dateOfBirth,
+      duty,
+      duty: Boolean(duty),
     });
     res.status(201).json({ user: user._id });
   } catch (err) {
     const errors = signUpErrors(err);
-    res.status(200).send({ errors });
+    res.status(200).send({ err });
   }
 };
 

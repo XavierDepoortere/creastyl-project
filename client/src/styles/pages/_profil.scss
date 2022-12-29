@@ -1,0 +1,44 @@
+.cardContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: $borderRadius;
+  width: 50%;
+  height: 60%;
+  box-shadow: 0 3px 10px #333;
+  font-family: $font-1;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  .boxCard {
+    border: 0.1vh solid $color-4;
+    height: 12.5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: $borderRadius;
+    padding: 0.5vh;
+    color: $grey;
+    font-weight: bold;
+    padding-left: 2vh;
+    text-transform: capitalize;
+
+    .demiBox {
+      display: flex;
+      position: absolute;
+      left: 35%;
+      color: $color-4;
+      text-transform: none;
+
+      span {
+        text-transform: capitalize;
+      }
+    }
+  }
+  .infoHr {
+    height: 15%;
+    background: $color-1;
+    border: none;
+    color: $white;
+  }
+}

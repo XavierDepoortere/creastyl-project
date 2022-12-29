@@ -8,6 +8,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [controlPassword, setControlPassword] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
+  const [duty, setDuty] = useState("");
 
   const resetForm = () => {
     setFirstName("");
@@ -16,6 +17,7 @@ const SignUp = () => {
     setPassword("");
     setControlPassword("");
     setDateOfBirth("");
+    setDuty("");
   };
 
   const handleRegister = async (e) => {
@@ -44,6 +46,8 @@ const SignUp = () => {
           email,
           password,
           dateOfBirth,
+          duty,
+          duty: Boolean(duty),
         },
       })
         .then((res) => {
@@ -86,6 +90,26 @@ const SignUp = () => {
           value={lastName}
         />
         <div className="lastName error"></div>
+        <br />
+        <label htmlFor="duty">Pouvoir</label>
+        <br />
+        <input
+          type="radio"
+          name="duty"
+          value="1"
+          checked={duty === "1"}
+          onClick={(e) => setDuty(e.target.value)}
+        />
+        Admin
+        <br />
+        <input
+          type="radio"
+          name="duty"
+          value=""
+          checked={duty === ""}
+          onClick={(e) => setDuty(e.target.value)}
+        />
+        User
         <br />
         <label htmlFor="dateOfBirth">Date de naissance</label>
         <br />
@@ -131,7 +155,6 @@ const SignUp = () => {
         />
         <div className="password-confirm error"></div>
         <br />
-
         <input type="submit" value="Valider inscription" />
       </form>
     </>

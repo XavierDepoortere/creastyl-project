@@ -40,52 +40,48 @@ const SignIn = () => {
   return (
     <div className="signIn">
       <div className="signInContent">
-        {uid ? (
-          <h1>UPDATE PAGE</h1>
-        ) : (
-          <div className="logContent">
-            <div className="formContent">
-              <form action="" onSubmit={handleLogin} id="sign-in-form">
-                <label htmlFor="email">Email</label>
-                <br />
-                <div className="email-input">
-                  <i className="fas fa-user"></i>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                  />
-                </div>
-                <div className="errorContent">
-                  <div className="email error"></div>
-                </div>
-                <br />
-                <label htmlFor="password">Mot de passe</label>
-                <br />
-                <div className="password-input">
-                  <i className="fas fa-lock"></i>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                  />
-                </div>
-                <div className="errorContent">
-                  <div className="password error"></div>
-                </div>
-                <br />
-                <input type="submit" value="Connexion" className="btn" />
-              </form>
-            </div>
-            <div className="imgContent">
-              <img src="../../img/log.png" alt="xavier depoortere" />
-            </div>
+        <div className="logContent">
+          <div className="formContent">
+            <form action="" onSubmit={handleLogin} id="sign-in-form">
+              <label htmlFor="email">Email</label>
+              <br />
+              <div className="email-input">
+                <i className="fas fa-user"></i>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+              </div>
+              <div className="errorContent">
+                <div className="email error"></div>
+              </div>
+              <br />
+              <label htmlFor="password">Mot de passe</label>
+              <br />
+              <div className="password-input">
+                <i className="fas fa-lock"></i>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
+              </div>
+              <div className="errorContent">
+                <div className="password error"></div>
+              </div>
+              <br />
+              <input type="submit" value="Connexion" className="btn" />
+            </form>
           </div>
-        )}
+          <div className="imgContent">
+            <img src="../../img/log.png" alt="xavier depoortere" />
+          </div>
+        </div>
       </div>
     </div>
   );

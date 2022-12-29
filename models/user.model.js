@@ -30,6 +30,10 @@ const userSchema = new mongoose.Schema(
       maxlength: 1024,
       minlength: 6,
     },
+    duty: {
+      type: Boolean,
+    },
+
     dateOfBirth: {
       type: Date,
       required: true,
