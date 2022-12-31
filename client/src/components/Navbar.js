@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { UidContext } from "./AppContext";
 import Logout from "./Logout";
+import Leftbar from "../components/Leftbar";
 
 const Navbar = () => {
+  var [radionav, setRadionav] = useState();
+  const [radionav2, setRadionav2] = useState();
   const uid = useContext(UidContext);
   const userData = useSelector((state) => state.userReducer);
   const firstname = userData.firstName;
@@ -14,10 +17,14 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div></div>
       {uid ? (
         <div className="topbar">
-          <NavLink exact={true.toString()} to="/">
+          <NavLink
+            exact={true.toString()}
+            to="/"
+            onClick={() => [setRadionav(true), setRadionav2(false)]}
+            value={radionav}
+          >
             <div className="iconNav">
               <div className="icon">
                 <img src="./img/house.svg" alt="acceuil" />
@@ -31,6 +38,8 @@ const Navbar = () => {
             aria-expanded={navAdmin}
             exact={true.toString()}
             to="/setting"
+            onClick={() => [setRadionav(false), setRadionav2(true)]}
+            value={radionav2}
           >
             <div className="iconNav">
               <div className="icon">
@@ -52,6 +61,7 @@ const Navbar = () => {
               <Logout />
             </div>
           </div>
+          <Leftbar radionav={radionav} radionav2={radionav2} />
         </div>
       ) : (
         <div></div>

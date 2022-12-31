@@ -47,7 +47,6 @@ const SignUp = () => {
           password,
           dateOfBirth,
           duty,
-          duty: Boolean(duty),
         },
       })
         .then((res) => {
